@@ -4,8 +4,7 @@ import { LoggingService } from '../logging.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  providers: [LoggingService]
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   homeTitle: string = "Welcome to the homepage...";
