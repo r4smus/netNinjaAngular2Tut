@@ -10,6 +10,8 @@ import { DirectoryComponent } from './directory/directory.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FilterPipe } from './filter.pipe'
 
+import { LoggingService } from './logging.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { FilterPipe } from './filter.pipe'
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
