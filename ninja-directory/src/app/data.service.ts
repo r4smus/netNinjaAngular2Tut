@@ -14,4 +14,10 @@ export class DataService {
     )
   }
 
+  fetchPersons(){
+    return this.http.get('http://localhost:8080/personList').map(
+      (res) => res.json()
+    )
+  }
+
 }

@@ -11,13 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { FilterPipe } from './filter.pipe'
 
 import { LoggingService } from './logging.service';
+import { PersonsComponent } from './persons/persons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DirectoryComponent,
-    FilterPipe
+    FilterPipe,
+    PersonsComponent
   ],
   imports: [
     BrowserModule,

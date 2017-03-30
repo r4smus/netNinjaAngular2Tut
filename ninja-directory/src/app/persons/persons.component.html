@@ -1,0 +1,9 @@
+<h2>Person Listing</h2>
+<ul id="ninja-listing">
+    <!-- "let" for local scope -->
+    <li *ngFor="let person of persons">
+        <div class="single-ninja">
+            <h3>{{person.firstName}} {{person.lastName}}</h3>
+        </div>
+    </li>
+</ul>
