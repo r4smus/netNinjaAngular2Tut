@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { LoggingService } from '../logging.service';
 import { DataService } from '../data.service';
 
+declare var firebase: any;
+
 @Component({
   selector: 'app-directory',
   templateUrl: './directory.component.html',
@@ -15,13 +17,21 @@ export class DirectoryComponent implements OnInit {
   constructor(private logger: LoggingService, private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.fetchData().subscribe(
+    /*this.dataService.fetchData().subscribe(
      (data) => this.ninjas = data 
-    );
+    );*/
+
+    this.fbGetData();
   }
 
   logIt(){
     this.logger.log();
+  }
+
+  fbGetData(){
+    firebase.database().ref('/').on('child_added', (snapshot) => {
+      this.ninjas.push(snapshot.val())
+    })
   }
 
 
