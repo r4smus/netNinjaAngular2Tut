@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
+  private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) { }
 
@@ -18,6 +19,11 @@ export class DataService {
     return this.http.get('http://localhost:8080/personList').map(
       (res) => res.json()
     )
+  }
+
+  createPerson(firstName: string, lastName: string){
+    var obj = { "firstName":firstName, "lastName":lastName};
+    this.http.post('http://localhost:8080/createPerson', JSON.stringify(obj), { headers: this.headers });
   }
 
 }

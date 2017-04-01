@@ -18,4 +18,11 @@ export class PersonsComponent implements OnInit {
     );
   }
 
+  add(firstName: string, lastName: string) {
+    firstName = firstName.trim();
+    lastName = lastName.trim();
+    //if (!firstName || !lastName) { return; }
+    this.dataService.createPerson(firstName,lastName);
+  }
+
 }

@@ -122,14 +122,14 @@ nav a:hover {
     cursor: pointer;
 }
 
-#add-ninja {
+.add {
     margin-top: 30px;
     background: #e7e7e7;
     padding: 10px;
     border-radius: 2px;
 }
 
-#add-ninja input {
+.add input {
     display: inline-block;
     padding: 10px;
     border-radius: 2px;
@@ -137,12 +137,12 @@ nav a:hover {
     width: 240px;
 }
 
-#add-ninja button {
+.add button {
     background: #0288d1;
     color: #eee;
     padding: 8px 10px;
     border: 0;
-    borader-radius: 2px;
+    border-radius: 2px;
     font-size: 16px;
     letter-spacing: 1px;
     cursor: pointer;

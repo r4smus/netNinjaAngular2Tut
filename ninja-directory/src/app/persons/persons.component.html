@@ -7,3 +7,9 @@
         </div>
     </li>
 </ul>
+
+<form class="add">
+    <input #firstName />
+    <input #lastName />
+    <button (click)="add(firstName.value,lastName.value); firstName.value=''; lastName.value=''">Add Person</button>
+</form>
