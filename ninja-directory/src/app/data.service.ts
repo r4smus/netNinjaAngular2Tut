@@ -3,6 +3,8 @@ import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
+import { Person } from './persons/person';
+
 @Injectable()
 export class DataService {
   private headers = new Headers({'Content-Type': 'application/json'});
@@ -25,5 +27,7 @@ export class DataService {
     var obj = { "firstName":firstName, "lastName":lastName};
     this.http.post('http://localhost:8080/createPerson', JSON.stringify(obj), { headers: this.headers });
   }
+
+  
 
 }

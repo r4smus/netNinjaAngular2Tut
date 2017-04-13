@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
+import { Person } from './person'
+
 @Component({
   selector: 'app-persons',
   templateUrl: './persons.component.html',
@@ -8,7 +10,7 @@ import { DataService } from '../data.service';
   providers: [DataService]
 })
 export class PersonsComponent implements OnInit {
-  persons = [];
+  persons: Person[];
 
   constructor(private dataService: DataService) { }
 
