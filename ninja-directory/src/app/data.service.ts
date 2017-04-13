@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 import { Person } from './persons/person';
 
@@ -26,6 +27,20 @@ export class DataService {
   createPerson(firstName: string, lastName: string){
     var obj = { "firstName":firstName, "lastName":lastName};
     this.http.post('http://localhost:8080/createPerson', JSON.stringify(obj), { headers: this.headers });
+  }
+
+  createPerson2(firstName: string, lastName: string): Promise<Person> {
+        var obj = { "firstName":firstName, "lastName":lastName};
+        return this.http
+            .post('http://localhost:8080/createPerson', JSON.stringify(obj), { headers: this.headers })
+            .toPromise()
+            .then(res => res.json().data)
+            .catch(this.handleError);
+    }
+
+  private handleError(error: any): Promise<any> {
+      console.error('An error occured', error); //for demo purpose only
+      return Promise.reject(error.message || error);
   }
 
   
